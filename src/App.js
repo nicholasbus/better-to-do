@@ -49,7 +49,6 @@ function App() {
     console.log(activeItemList)
 
   }
-
   return (
     <>
       <Container fluid id="main-container">
