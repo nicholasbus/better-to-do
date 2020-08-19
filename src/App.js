@@ -115,6 +115,15 @@ function App() {
           </Col>
           <Col className="main-cols"> 
             <h2>Completed this session Col</h2>
+
+            {
+              completedList.map((item, index) => {
+                return <h4 key={index}>{item}
+                  
+                </h4>
+              })
+            }
+
           </Col>
         </Row>
       </Container>
