@@ -11,6 +11,7 @@ import Form from 'react-bootstrap/Form';
 
 function App() {
   const [itemCount, setItemCount] = useState(0);
+  const [completedCount, setCompletedCount] = useState(0);
   const [activeItemList, setActiveItemList] = useState([]);
   const [completedList, setCompletedList] = useState([]);
   const [show, setShow] = useState(false);
@@ -31,6 +32,8 @@ function App() {
 
   const handleComplete = (index) => {
     const clicked = activeItemList[index]
+
+    setCompletedCount(completedCount + 1);
 
     let newArr = completedList
     newArr.push(clicked)
@@ -56,9 +59,9 @@ function App() {
             <Card>
               <Card.Header>Stats</Card.Header>
               <ListGroup variant="flush">
-                <ListGroup.Item>Items Added This Session: </ListGroup.Item>
-                <ListGroup.Item>Items Completed This Session: </ListGroup.Item>
-                <ListGroup.Item>Active Items: </ListGroup.Item>
+                <ListGroup.Item>Items Added This Session: {itemCount} </ListGroup.Item>
+                <ListGroup.Item>Items Completed This Session: {completedCount} </ListGroup.Item>
+                <ListGroup.Item>Active Items: {activeItemList.length} </ListGroup.Item>
               </ListGroup>
             </Card>
           </Col>
